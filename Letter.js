@@ -1,6 +1,6 @@
 
 
-let word_array = ['c']
+let word_array = ['c', 'a', 't']
 
 
 
@@ -17,16 +17,15 @@ let result = word_array.map((letter) => {
         return result
 }
 
+const update_guessed = () => {
 
-
+}
 
 let Letter = function(char){
     this.character = char
     this.guessed = false
     this.display_char = return_char(char)
-    this.check_char = (param) => {
-
-    }
+    this.been_guessed = update_guessed(char)
 }
 
 let word = new Letter(word_array[0])
