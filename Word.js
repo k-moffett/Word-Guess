@@ -11,7 +11,11 @@ class Word {
            let temp = new Letter(x)
            array.push(temp.display_letter())
         })
-        console.log(array.join(" "))//result to display
+        console.log(array.join(" "), '(in Word.js)')//result to display
+    }
+
+    guess() {
+
     }
 }
 
