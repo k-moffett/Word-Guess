@@ -1,7 +1,7 @@
 class Letter {
     constructor(letter, guessed) {
         this.letter = letter
-        this.guessed = guessed
+        this.guessed = false
     }
 
     display_letter(letter) {
@@ -21,11 +21,8 @@ class Letter {
         }
         else if (this.letter != letter) {
             return this.guessed
-        }
-    
+        } 
     }
 }
 
-let character = new Letter('s', true)
-console.log(character.display_letter())
-console.log(character.update_guessed())
+module.exports = Letter
