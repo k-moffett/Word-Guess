@@ -16,7 +16,8 @@ class Letter {
     }
 
     update_guessed(letter) {
-        console.log(this.letter, this.guessed, '(in Letter.js)')
+        //console.log(this.letter, this.guessed, '(in Letter.js)')
+        console.log(this.letter)
         if (this.letter === letter) {
             this.guessed = true
         }
@@ -28,5 +29,3 @@ class Letter {
 
 module.exports = Letter
 
-let flabble = new Letter('s')
-flabble.update_guessed()
