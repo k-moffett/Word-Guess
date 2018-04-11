@@ -14,12 +14,12 @@ class Word {
         console.log(array.join(" "), '(in Word.js)')//result to display
     }
 
-    guess() {
+    guess(current_word) {
+        //console.log(current_word, "WORD")
         console.log(this.word_letters, "(first log in guess function)")
-        this.word_letters.map((x) => {
+        let x = this.word_letters
             let temp = new Letter(x)
-            temp.update_guessed()
-        })
+            temp.update_guessed(current_word)
     }
 }
 

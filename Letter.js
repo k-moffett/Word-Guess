@@ -15,16 +15,17 @@ class Letter {
         }
     }
 
-    update_guessed(letter) {
-        let array = []
-        console.log(this.letter, this.guessed, '(in update_guess)')
-        if (array.includes(this.letter) === false) {
+    update_guessed(current_word) {
+        //console.log(current_word.word_letters, "LETTER")
+        let array = current_word.word_letters
+        //console.log(this.letter, this.guessed, '(in update_guess)')
+        if (array.includes(this.letter.toString()) === true) {
             this.guessed = true
+            console.log("CORRECT!!!")
         }
-        else if (array.includes(this.letter) === true) {
-            return this.guessed
+        else if (array.includes(this.letter.toString()) === false) {
+            console.log("WRONG, dummy...")
         }
-        array.push(this.letter) 
      }
 }
 
