@@ -1,7 +1,10 @@
 class Letter {
     constructor(letter, guessed) {
         this.letter = letter
-        this.guessed = false
+        if (guessed === true) {
+            this.guessed = true
+        }
+        else {this.guessed = false}
     }
 
     display_letter(letter) {
@@ -24,6 +27,7 @@ class Letter {
         }
         else if (array.includes(this.letter.toString()) === false) {
             console.log("WRONG, dummy...")
+            //tell app to repeat the question from here to prevent error
         }
      }
 }

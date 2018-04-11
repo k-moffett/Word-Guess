@@ -1,4 +1,5 @@
 let Word = require('./Word.js')
+let Letter = require('./Letter.js')
 let inquirer = require('inquirer')
 let util = require('util')
 let words = ['fleeble', 'scribbs', 'blooky', 'nopperdome', 'lankrank']
@@ -26,15 +27,14 @@ const random_word = () => {
     console.log(current_word, "INDEX")
 }
 
-random_word() // generates a random word
+random_word() 
 
 inquirer.prompt(question).then(answers => {
     let temp = new Word(answers.current_guess)
     let current_guess = temp.guess(current_word)
     let display = Array.from(both_arrays.display_array)
-    console.log(display[2], "ARRAY TO COMPARE FROM") 
-    console.log(current_guess, "RETURNED VALUE FROM LETTERS")
     let letter_array = []
+    let final_array = []
     //for loop makes me sad
     for (i=0; i<display.length; i++) {
         letter_array.push(display[i].letter)
@@ -42,6 +42,12 @@ inquirer.prompt(question).then(answers => {
     if (letter_array.includes(current_guess.letter.toString()) === true) {
         let letter_index = letter_array.indexOf(current_guess.letter.toString())
         display[letter_index].guessed = true
-        console.log(display)
+        for (i=0; i<display.length; i++) {
+            let a = display[i].letter
+            let b = display[i].guessed
+            let final_letter = new Letter(a,b)
+            final_array.push(final_letter.display_letter())
+        }
     }
+    console.log(final_array.join(" "))
 });
