@@ -15,19 +15,22 @@ let question = {
     }
 }
 let current_word 
+let being_guessed 
 
 const random_word = () => {
     let new_word = words[Math.floor(Math.random() * words.length)]
     let temp = new Word(new_word)
     current_word = temp
-    temp.word_string()
+    being_guessed = temp.word_string()
+    //being_guessed = temp.word_string()
     console.log(current_word, "INDEX")
 }
 
 random_word() // generates a random word
 
 inquirer.prompt(question).then(answers => {
-    console.log(answers.current_guess, "(log in inquirer prompt)")
     let temp = new Word(answers.current_guess)
-    temp.guess(current_word)
+    let current_guess = temp.guess(current_word)
+    console.log(being_guessed) //can access being_guessed
+    console.log(current_guess, "RETURNED VALUE FROM LETTERS")
 });
