@@ -19,11 +19,11 @@ class Letter {
         let array = current_word.word_letters
         if (array.includes(this.letter.toString()) === true) {
             this.guessed = true
-            console.log("CORRECT!!!", this.display_letter())
+            console.log("CORRECT!!!")
             return this
         }
         else if (array.includes(this.letter.toString()) === false) {
-            console.log("WRONG, dummy...", this.display_letter())
+            console.log("WRONG, dummy...")
         }
      }
 }
