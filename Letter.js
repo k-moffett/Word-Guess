@@ -16,8 +16,7 @@ class Letter {
     }
 
     update_guessed(letter) {
-        //console.log(this.letter, this.guessed, '(in Letter.js)')
-        console.log(this.letter)
+        console.log(this.letter, this.guessed, '(in update_guess)')
         if (this.letter === letter) {
             this.guessed = true
         }

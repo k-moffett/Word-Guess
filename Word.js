@@ -15,16 +15,14 @@ class Word {
     }
 
     guess() {
-        //console.log(this.word_letters)
-        let array = []
+        console.log(this.word_letters, "(first log in guess function)")
         this.word_letters.map((x) => {
             let temp = new Letter(x)
-            array.push(temp)
-            console.log(temp.update_guessed())
+            temp.update_guessed()
         })
     }
 }
 
 let new_word = new Word('cat')
-//new_word.word_string()
+//new_word.word_string() returns the "_ _ _ (in Word.js)"
 new_word.guess()
