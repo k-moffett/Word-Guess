@@ -16,14 +16,16 @@ class Letter {
     }
 
     update_guessed(letter) {
+        let array = []
         console.log(this.letter, this.guessed, '(in update_guess)')
-        if (this.letter === letter) {
+        if (array.includes(this.letter) === false) {
             this.guessed = true
         }
-        else if (this.letter != letter) {
+        else if (array.includes(this.letter) === true) {
             return this.guessed
-        } 
-    }
+        }
+        array.push(this.letter) 
+     }
 }
 
 module.exports = Letter

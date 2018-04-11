@@ -23,6 +23,8 @@ class Word {
     }
 }
 
-let new_word = new Word('cat')
+module.exports = Word
+
+//let new_word = new Word('c')
 //new_word.word_string() returns the "_ _ _ (in Word.js)"
-new_word.guess()
+//new_word.guess()
