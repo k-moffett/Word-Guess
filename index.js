@@ -2,7 +2,7 @@ let Word = require('./Word.js')
 let Letter = require('./Letter.js')
 let inquirer = require('inquirer')
 let util = require('util')
-let words = ['fleeble', 'scribbs', 'blooky', 'nopperdome', 'lankrank']
+
 let question = {
     type: 'input',
     name: 'current_guess',
@@ -16,15 +16,15 @@ let question = {
         }
     }
 }
+let words = ['fleeble', 'scribbs', 'blooky', 'nopperdome', 'lankrank']
 let current_word 
 let both_arrays 
 
 const random_word = () => {
     let new_word = words[Math.floor(Math.random() * words.length)]
     let temp = new Word(new_word)
-    current_word = temp
     both_arrays = temp.word_string()
-    console.log(current_word, "INDEX")
+    console.log(temp, "INDEX")
 }
 
 random_word() 
@@ -51,3 +51,4 @@ inquirer.prompt(question).then(answers => {
     }
     console.log(final_array.join(" "))
 });
+
